@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RH Bolsas - Bolsas e Mochilas de Qualidade</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #8e44ad;
+      --secondary: #f39c12;
+      --light: #f5f5f5;
+      --dark: #333;
+      --danger: #e74c3c;
+      --success: #27ae60;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: var(--dark);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* Header */
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .top-bar {
+      background-color: var(--primary);
+      color: white;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .top-bar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    .header-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 0;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .logo span {
+      color: var(--secondary);
+    }
+
+    .search-bar {
+      flex: 1;
+      max-width: 500px;
+      margin: 0 20px;
+      position: relative;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+      outline: none;
+    }
+
+    .search-bar button {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-actions a {
+      color: var(--dark);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header-actions i {
+      font-size: 20px;
+      margin-bottom: 5px;
+      color: var(--primary);
+    }
+
+    .cart-count {
+      background-color: var(--danger);
+      color: white;
+      font-size: 10px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: -5px;
+      right: -5px;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      z-index: 1;
+    }
+
+    .dropdown-menu a {
+      color: var(--dark);
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f5f5f5;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/500') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #7d32a8;
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background-color: #e67e22;
+    }
+
+    /* Features */
+    .features {
+      padding: 50px 0;
+      background-color: white;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-radius: 5px;
+      transition: transform 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature i {
+      font-size: 40px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .feature h3 {
+      margin-bottom: 15px;
+    }
+
+    /* Categories */
+    .section-heading {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .section-heading:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+
+    .categories {
+      padding: 50px 0;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .category-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 5px;
+      height: 250px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .category-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      color: white;
+    }
+
+    .category-content h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Products */
+    .products {
+      padding: 50px 0;
+      background-color: #f8f9fa;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .product-image {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .product-card:hover .product-overlay {
+      opacity: 1;
+    }
+
+    .product-actions {
+      display: flex;
+    }
+
+    .product-actions a {
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 5px;
+      color: var(--dark);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .product-actions a:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-info h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .current-price {
+      font-weight: bold;
+      font-size: 18px;
+      color: var(--primary);
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+
+    .product-rating {
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .add-to-cart {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+    }
+
+    .add-to-cart:hover {
+      background-color: #7d32a8;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 50px 0;
+      background-color: white;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background-color: #f8f9fa;
+      padding: 30px;
+      border-radius: 5px;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .testimonial-card:before {
+      content: '\201C';
+      font-size: 80px;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      color: var(--primary);
+      opacity: 0.2;
+    }
+
+    .testimonial-text {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .author-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+
+    .author-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      margin-bottom: 5px;
+    }
+
+    .author-info p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* Newsletter */
+    .newsletter {
+      padding: 50px 0;
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      margin-bottom: 20px;
+    }
+
+    .newsletter p {
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .newsletter-form button {
+      background-color: var(--secondary);
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 0 3px 3px 0;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .newsletter-form button:hover {
+      background-color: #e67e22;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #999;
+      padding-top: 50px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .footer-column h3 {
+      color: white;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-column h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--primary);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #999;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-contact-info div {
+      display: flex;
+      margin-bottom: 15px;
+    }
+
+    .footer-contact-info i {
+      margin-right: 10px;
+      color: var(--primary);
+    }
+
+    .social-links a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background-color: #333;
+      color: white;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      transition: background 0.3s;
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary);
+    }
+
+    .footer-bottom {
+      margin-top: 30px;
+      border-top: 1px solid #333;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-main {
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        margin-bottom: 15px;
+      }
+
+      .search-bar {
+        order: 3;
+        margin: 15px 0 0;
+        max-width: 100%;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form input {
+        border-radius: 3px;
+        margin-bottom: 10px;
+      }
+
+      .newsletter-form button {
+        border-radius: 3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div>
+        <i class="fas fa-phone"></i> (11) 9xxxx-xxxx
+        <i class="fas fa-envelope ml-2"></i> contato@rhbolsas.com.br
+      </div>
+      <div>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-main">
+        <div class="logo">RH <span>Bolsas</span></div>
+        <div class="search-bar">
+          <input type="text" placeholder="Pesquisar produtos...">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="header-actions">
+          <a href="#">
+            <i class="far fa-user"></i>
+            <span>Minha Conta</span>
+          </a>
+          <a href="#">
+            <i class="far fa-heart"></i>
+            <span>Favoritos</span>
+          </a>
+          <a href="#" style="position: relative;">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Carrinho</span>
+            <span class="cart-count">3</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Bolsas Femininas <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="#">Bolsas de Mão</a>
+            <a href="#">Bolsas Tiracolo</a>
+            <a href="#">Clutches</a>
+            <a href="#">Bolsas de Festa</a>
+            <a href="#">Bolsas de Praia</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">Mochilas Femininas <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="#">Mochilas Casuais</a>
+            <a href="#">Mochilas Executivas</a>
+            <a href="#">Mochilas para Notebook</a>
+            <a href="#">Mini Mochilas</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">Mochilas Masculinas <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="#">Mochilas Executivas</a>
+            <a href="#">Mochilas para Notebook</a>
+            <a href="#">Mochilas Esportivas</a>
+            <a href="#">Mochilas de Viagem</a>
+          </div>
+        </li>
+        <li><a href="#">Promoções</a></li>
+        <li><a href="#">Sobre Nós</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Estilo e Qualidade em Cada Detalhe</h1>
+      <p>Descubra nossa coleção exclusiva de bolsas e mochilas para todos os estilos e ocasiões</p>
+      <a href="#" class="btn btn-primary">Ver Coleção</a>
+      <a href="#" class="btn btn-secondary">Ofertas Especiais</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature">
+          <i class="fas fa-truck"></i>
+          <h3>Frete Grátis</h3>
+          <p>Para compras acima de R$ 199,00 em todo o Brasil</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-sync-alt"></i>
+          <h3>30 Dias para Troca</h3>
+          <p>Não gostou? Troque ou devolva sem complicação</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-lock"></i>
+          <h3>Pagamento Seguro</h3>
+          <p>Seus dados protegidos com criptografia de ponta</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-headset"></i>
+          <h3>Suporte 24/7</h3>
+          <p>Estamos sempre disponíveis para ajudar você</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-heading">Categorias em Destaque</h2>
+      <div class="category-grid">
+        <div class="category-card">
+          <img src="/api/placeholder/400/250" alt="Bolsas Femininas">
+          <div class="category-content">
+            <h3>Bolsas Femininas</h3>
+            <a href="#" class="btn btn-primary">Ver Coleção</a>
+          </div>
+        </div>
+        <div class="category-card">
+          <img src="/api/placeholder/400/250" alt="Mochilas Femininas">
+          <div class="category-content">
+            <h3>Mochilas Femininas</h3>
+            <a href="#" class="btn btn-primary">Ver Coleção</a>
+          </div>
+        </div>
+        <div class="category-card">
+          <img src="/api/placeholder/400/250" alt="Mochilas Masculinas">
+          <div class="category-content">
+            <h3>Mochilas Masculinas</h3>
+            <a href="#" class="btn btn-primary">Ver Coleção</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products">
+    <div class="container">
+      <h2 class="section-heading">Produtos Populares</h2>
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/300/300" alt="Bolsa Feminina">
+            <div class="product-overlay">
+              <div class="product-actions">
+                <a href="#"><i class="far fa-eye"></i></a>
+                <a href="#"><i class="far fa-heart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Bolsa Feminina Transversal Elegance</h3>
+            <div class="product-price">
+              <span class="current-price">R$ 129,90</span>
+              <span class="old-price">R$ 179,90</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(4.5)</span>
+            </div>
+            <button class="add-to-cart">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/300/300" alt="Bolsa Feminina">
+            <div class="product-overlay">
+              <div class="product-actions">
+                <a href="#"><i class="far fa-eye"></i></a>
+                <a href="#"><i class="far fa-heart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Mochila Feminina Urban Style</h3>
+            <div class="product-price">
+              <span class="current-price">R$ 159,90</span>
+              <span class="old-price">R$ 199,90</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(4.0)</span>
+            </div>
+            <button class="add-to-cart">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/300/300" alt="Bolsa Feminina">
+            <div class="product-overlay">
+              <div class="product-actions">
+                <a href="#"><i class="far fa-eye"></i></a>
+                <a href="#"><i class="far fa-heart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Mochila Masculina Executive Pro</h3>
+            <div class="product-price">
+              <span class="current-price">R$ 189,90</span>
+              <span class="old-price">R$ 229,90</span>
+            </div>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(5.0)</span>
+            </div>
+            <button class="add-to-cart">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/api/placeholder/300/300" alt="Bolsa Feminina">
+            <div class="product-overlay">
+              <div class="product-actions">
+                <a href="#"><i class="far fa-eye"></i></a>
+                <a href="#"><i class="far fa-heart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3>Bolsa de Praia Summer Collection</h3>
+            <div class="product-price">
+              <span class="current-price">R$ 89,90</span>
+              <span class="old-price">R$ 119,90</span>
+            </div>
+            <div class="product-rating">
